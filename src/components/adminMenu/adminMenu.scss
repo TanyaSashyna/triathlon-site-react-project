@@ -1,0 +1,128 @@
+@import "../../styles/variables";
+
+.menu-block {
+  display:flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  
+  .menu-skew {
+    position: relative;
+    top: 0px;
+    left: 0;
+    height: 220px;
+    width: 40%;
+    overflow: hidden;
+    transition: 0.3s;
+    margin: 5px 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s ease-in-out;
+    
+    &:first-child {
+      clip-path: polygon(0 0,100% 0,80% 100%,0% 100%);
+      background-image: url(https://cdn.pixabay.com/photo/2018/08/09/02/50/person-3593664_1280.jpg);
+    }
+
+     &:nth-child(2) {
+      right: -100px;
+      clip-path: polygon(12% 0,100% 0,100% 100%,0% 100%);
+      margin-left: -7%;
+      flex-grow: 2;
+      background-image: url(https://cdn.pixabay.com/photo/2018/08/12/11/02/swim-3600519_1280.jpg);
+    } 
+    
+     &:nth-child(3){
+      flex-grow: 2;
+      clip-path: polygon(0 0,100% 0,86% 100%,0% 100%);
+      background-image: url(https://cdn.pixabay.com/photo/2016/07/07/22/58/cycling-1503365_1280.jpg);
+    }
+   
+     &:nth-child(4) {
+      flex-grow: 0;
+      clip-path: polygon(24% 0,100% 0,100% 100%,0% 100%);
+      margin-left: -8.5%;
+      background-image: url(https://cdn.pixabay.com/photo/2017/06/06/18/06/jogging-2377983_1280.jpg);
+    }
+
+    &:nth-child(5) {
+       width: 100%;
+       background-image: url(https://cdn.pixabay.com/photo/2014/01/24/13/32/marathon-250987_1280.jpg);
+    }
+   
+    .menu-text{
+      color: $color-white;
+      font-size: 3rem;
+      letter-spacing: 0.2;
+      font-weight: 600;
+      text-shadow: 3px 3px 3px #000;
+      transition: .5s ease-in-out;
+    }
+    
+    &:hover {
+      opacity: 0.75;
+      .menu-text{
+        color: $color-mint;
+        font-size: 3.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: $small){
+  .menu-block {
+    flex-direction: column;
+    margin-top: 5px;
+    
+    .menu-skew {
+      height: 150px;
+      width: 100%;
+      margin: 3px 0;
+      
+      &:first-child {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+  
+       &:nth-child(2) {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        margin-left: 0;
+      } 
+      
+       &:nth-child(3){
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+      
+      &:nth-child(4) {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        margin-left: 0;
+      }
+  
+      &:nth-child(5) {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+  
+       &:nth-child(6) {
+        right: 0;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        margin-left: 0;
+      } 
+      
+      .menu-text{
+        font-size: 2rem;
+        letter-spacing: 0;
+        font-weight: 600;
+        text-shadow: 2px 2px 2px #000;
+      }
+      &:hover {
+        .menu-text{
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+}

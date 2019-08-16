@@ -1,0 +1,32 @@
+@import "variables";
+
+.logo {
+    margin-bottom: 3rem;
+
+    &.blue {
+        a {
+            color: $color-blue;
+
+            &:hover {
+                color: $color-blue;
+            }
+        }
+    }
+
+    a {
+        color: $color-white;
+        font-weight: 700;
+        font-size: 2rem;
+        text-transform: uppercase;
+        display: inline-block;
+
+        span {
+            color: $color-mint;
+            font-size: 3rem;
+        }
+
+        &:hover {
+            color: $color-white;
+        }
+    }
+}

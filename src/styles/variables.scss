@@ -1,0 +1,44 @@
+//color
+$color-blue: #1f7394;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-error: #9e4560;
+$color-grey-light: #eeeeee;
+$color-mint: #5acec2;
+$color-grey-2: #f5f5f5;
+$color-grey-3: #aabbcc;
+
+//font-weight
+$light: 300;
+$normal: 400;
+$semi-bold: 600;
+$bold: 700;
+
+
+//font-family
+$typo-1: 'Josefin Sans', sans-serif;
+
+//mediaquery
+//max-width
+$medium: 1279px;
+$medium-sm: 991px;
+$small: 767px;
+$xsmall: 575px;
+
+//min-width
+$min-medium: 1280px;
+$min-medium-sm: 992px;
+$min-small: 768px;
+$min-xsmall: 576px;
+
+//max-height
+$height-630: 630px;
+
+//mixins
+@mixin bg-settings {
+    background: {
+        repeat: no-repeat;
+        position: center;
+        size: cover;
+    }
+}

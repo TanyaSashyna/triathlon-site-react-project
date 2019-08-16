@@ -1,0 +1,28 @@
+@import "../../styles/variables";
+
+.events {
+    background-image: url('../../assets/img/page-bg.jpg');
+    background-attachment: fixed;
+    @include bg-settings;
+    padding-bottom: 5rem;
+
+    h4 {
+        margin-bottom: 1.5rem;
+        text-align: center;
+        font-size: 1.4rem;
+    }
+
+    &-content {
+        background: $color-white;
+        padding: 3rem 1.6rem;
+    }
+
+    &-list {
+        margin: 0 -0.5rem;
+
+        @media (min-width: $min-small) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+}

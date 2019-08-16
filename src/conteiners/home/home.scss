@@ -1,0 +1,168 @@
+@import "../../styles/variables";
+
+.hero {
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &-logo {
+        position: relative;
+        z-index: 4;
+        display: flex;
+        align-items: center;
+        margin-bottom: 5rem;
+
+        img {
+            max-width: 30rem;
+            width: 100%;
+        }
+
+        h3 {
+            padding-left: 6rem;
+            font-size: 9rem;
+            font-weight: $bold;
+            color: $color-white;
+            line-height: 1;
+            text-transform: uppercase;
+            text-align: center;
+            padding-top: 2rem;
+
+            .just {
+                display: block;
+                font-size: 11rem;
+            }
+
+            .tri {
+                color: $color-mint;
+            }
+        }
+    }
+
+    h1 {
+        font-size: 5rem;
+        line-height: 1.1;
+        font-weight: $bold;
+        color: $color-white;
+        position: relative;
+        z-index: 4;
+    }
+
+    .bg-black {
+        z-index: 3;
+    }
+
+    .bg-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        background-image: url(https://cdn.pixabay.com/photo/2015/03/08/21/06/cycling-664753_960_720.jpg);
+        @include bg-settings;
+
+        @media (min-width: $min-medium-sm) {
+            display: none;
+        }
+    }
+
+    video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+
+        @media (max-width: $medium-sm) {
+            display: none;
+        }
+    }
+
+    @media (max-width: $medium) {
+        min-height: auto;
+        padding: 10rem 0;
+
+        &-logo {
+            justify-content: center;
+
+            img {
+                max-width: 20rem;
+            }
+
+            h3 {
+                font-size: 7rem;
+
+                .just {
+                    font-size: 9rem;
+                }
+            }
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: $small) {
+        padding: 5rem 0;
+
+        &-logo {
+            display: block;
+            text-align: center;
+
+            img {
+                max-width: 10rem;
+            }
+
+            h3 {
+                padding-left: 0;
+            }
+        }
+
+        h1 {
+            font-size: 2.4rem;
+        }
+    }
+}
+
+.home {
+    padding-top: 6rem;
+
+    &.events {
+        background-image: url('../../assets/img/girl-bg.jpg');
+    }
+}
+
+.sponsors {
+    background: $color-black;
+    padding: 5rem 0 1rem;
+
+    h4 {
+        color: $color-white;
+        margin-bottom: 3rem;
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+    &-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .item {
+            max-width: 150px;
+            width: 100%;
+            padding: 0 3rem;
+            margin-bottom: 4rem;
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

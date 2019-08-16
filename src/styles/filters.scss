@@ -1,0 +1,27 @@
+.events-filters {
+    background: $color-white;
+    margin: 0 0 1.5rem;
+    padding: 1.6rem;
+
+    label {
+        margin-bottom: 1rem;
+    }
+
+    h4 {
+        margin-bottom: 1.5rem;
+        text-align: center;
+        font-size: 1.4rem;
+    }
+}
+
+.form-filter {
+    .form-block__select {
+        width: 100%;
+    }
+
+    .btn-group {
+        text-align: center;
+        padding-top: 1rem;
+        padding-bottom: 0;
+    }
+}

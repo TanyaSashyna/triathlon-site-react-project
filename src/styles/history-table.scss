@@ -1,0 +1,41 @@
+//table
+.history {
+    overflow-x: auto;
+    
+    table {
+        min-width: 38rem;
+        width: 100%;
+        border-collapse: collapse;
+        border: 0;
+
+        thead {
+            tr {
+                border-bottom: 1px solid $color-mint;
+            }
+        }
+
+        tbody {
+            tr {
+                &:not(:last-child) {
+                    border-bottom: 1px solid $color-mint;
+                }
+            }
+        }
+
+        th {
+            font-size: 1.2rem;
+            color: $color-blue;
+            font-weight: $bold;
+        }
+
+        td {
+            font-size: 1.4rem;
+        }
+
+        th, td {
+            padding: 10px;
+            border-collapse: collapse;
+            border: 0;
+        }
+    }
+}

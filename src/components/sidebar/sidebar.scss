@@ -1,0 +1,217 @@
+@import "../../styles/variables";
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    max-width: 32rem;
+    width: 100%;
+    height: 100%;
+    transition: left 0.8s;
+
+    &:hover {
+        nav {
+            ul {
+                transform: translate(-3rem, 0);
+            }
+        }
+
+        .menu-skew {
+            left: -20rem;
+            opacity: 1;
+
+            .img-bg {
+                opacity: 1;
+            }
+        }
+    }
+
+    nav {
+        position: relative;
+        z-index: 3;
+        padding: 2rem;
+
+        ul {
+            padding-left: 5rem;
+            transform: translate(-5rem, 0);
+            transition: 0.6s;
+
+            li {
+                button {
+                    background: transparent;
+                    border: 0;
+                }
+
+                a, button {
+                    position: relative;
+                    display: inline-block;
+                    color: $color-white;
+                    font-weight: $semi-bold;
+                    font-size: 1.8rem;
+                    padding: 1rem 0;
+                    opacity: 0.7;
+                    transition: 0.5s;
+                    cursor: pointer;
+
+                    &:before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        left: -5rem;
+                        width: 4rem;
+                        height: 2px;
+                        background: $color-white;
+                        transform: translate(0, -0.3rem);
+                        transition: 0.5s;
+                    }
+
+                    &:hover {
+                        padding-left: 1rem;
+                        opacity: 1;
+
+                        &:before {
+                            width: 6.2rem;
+                        }
+                    }
+                }
+
+                a.logout {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .menu-skew {
+        position: absolute;
+        top: 0;
+        left: -25rem;
+        height: 100%;
+        width: 40rem;
+        background: $color-blue;
+        z-index: 1;
+        overflow: hidden;
+        transform: skewX(-17deg);
+        opacity: 0.5;
+        transition: 0.5s;
+    }
+
+    .img-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        height: 100%;
+        width: 200%;
+        transform: skewX(17deg);
+        background-image: url('../../assets/img/bg-sidebar.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 1;
+        transition: 0.3s;
+    }
+
+    .burgerIcon {
+        min-width: 6rem;
+        min-height: 6rem;
+        display: block;
+        border-radius: 50%;
+        background: $color-mint;
+        transition: 0.5s;
+        cursor: pointer;
+        position: fixed;
+        top: 1.5rem;
+        left: 1.5rem;
+        z-index: 100;
+        border: none;
+        opacity: 0.6;
+
+        span {
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            height: 0.4rem;
+            border-radius: 10%;
+            width: 3rem;
+            background: $color-white;
+            transition: background-color 0.5s;
+
+            &::before {
+                width: 3rem;
+                height: 0.4rem;
+                border-radius: 10%;
+                content: "";
+                display: block;
+                position: absolute;
+                background: $color-white;
+                transform: translateY(-10px);
+                transition: transform 0.5s;
+                transform-origin: 50% 50%;
+            }
+
+            &::after {
+                width: 3rem;
+                height: 0.4rem;
+                border-radius: 10%;
+                content: "";
+                display: block;
+                position: absolute;
+                background: $color-white;
+                transform: translateY(10px);
+                transition: transform 0.5s;
+                transform-origin: 50% 50%;
+            }
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &.open {
+            transform: rotate(180deg);
+
+            span {
+                background: transparent;
+
+                &::before {
+                    transform: rotate(45deg);
+                }
+
+                &::after {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+
+    @media (min-width: $min-medium) {
+        .img-bg {
+            opacity: 0;
+        }
+
+        .burgerIcon {
+            display: none;
+        }
+    }
+
+    @media (max-width: $medium) {
+        .menu-skew {
+            left: -20rem;
+            opacity: 1;
+        }
+
+        nav {
+            padding-top: 10rem;
+        }
+
+        &.close {
+            left: -65rem;
+        }
+    }
+}

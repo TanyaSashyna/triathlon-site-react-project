@@ -1,0 +1,15 @@
+@import "../../styles/variables";
+
+.results-wrap {
+    padding: 5rem 0;
+
+    .history {
+        i.fa {
+            color: $color-blue;
+        }
+
+        table {
+            min-width: 57.5rem;
+        }
+    } 
+}

@@ -1,0 +1,85 @@
+@import "../../styles/variables";
+
+.reviews {
+    &-wrap {
+        padding: 5rem 0 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 -1rem;
+
+        &-add {
+            padding-bottom: 5rem;
+            padding-top: 3rem;
+
+            h3 {
+                font-size: 2.1rem;
+                margin-bottom: 1.5rem;
+                text-align: center;
+                color: $color-blue;
+            }
+
+            .form {
+                max-width: 500px;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .input-box, .form-block__select {
+                width: 100%;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    &-item {
+        width: 100%;
+        padding: 0 1rem 3rem;
+
+        .review-content {
+            height: 100%;
+            padding: 1.5rem;
+            border: 1px solid $color-mint;
+            text-align: center;
+        }
+    }
+
+    &-name {
+        position: relative;
+        font-size: 2.1rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3rem;
+            height: 0.1rem;
+            background: $color-mint;
+        }
+    }
+
+    &-date {
+        font-size: 1.4rem;
+        color: $color-blue;
+        margin-bottom: 1.5rem;
+
+        i {
+            margin-right: 1rem;
+        }
+    }
+
+    &-text {
+        font-size: 1.6rem;
+    }
+
+    @media (min-width: $min-small) {
+        &-item {
+            width: 50%;
+        }
+    }
+}

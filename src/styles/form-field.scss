@@ -1,0 +1,17 @@
+//input-box error message
+.input-box {
+    &__error {
+        color: $color-error;
+    }
+}
+
+//select error message
+.form-block {
+    &__select,
+    &__text-area {
+        .error {
+            font-size: 1.3rem;
+            color: $color-error;
+        }
+    }
+}

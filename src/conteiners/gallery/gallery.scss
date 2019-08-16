@@ -1,0 +1,66 @@
+@import "../../styles/variables";
+
+.gallery {
+    &-wrap {
+        padding: 5rem 0;
+    }
+
+    &-item {
+        text-align: center;
+
+        &:not(:last-child) {
+            padding-bottom: 3rem;
+            margin-bottom: 5rem;
+            border-bottom: 1px solid $color-blue;
+        }
+
+        h3 {
+            font-size: 2.4rem;
+        }
+
+        h5 {
+            font-size: 1.8rem;
+            color: $color-blue;
+            margin-bottom: 2rem;
+        }
+
+        .gallery-photo {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -1rem;
+        }
+
+        .photo-item {
+            width: 33.33%;
+            padding: 1rem;
+
+            &-bg {
+                display: flex;
+                align-items: center;
+                height: 100%;
+                background: $color-grey-light;
+                border: 3px solid $color-grey-light;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    @media(max-width: $small) {
+        &-item {
+            .photo-item {
+                width: 50%;
+            }
+        }
+    }
+
+    @media(max-width: $xsmall) {
+        &-item {
+            .photo-item {
+                width: 100%;
+            }
+        }
+    }
+}

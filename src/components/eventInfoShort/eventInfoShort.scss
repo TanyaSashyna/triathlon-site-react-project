@@ -1,0 +1,117 @@
+@import "../../styles/variables";
+
+.event {
+    &-item {
+        padding: 0 0.5rem 2rem 0.5rem;
+
+        a {
+            display: block;
+            height: 100%;
+
+            &:hover {
+                .event-cap,
+                .event-date {
+                    color: $color-white;
+                }
+
+                .bg-black,
+                .event-picture {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        padding: 10px;
+        border-top: solid 3px $color-blue;
+        background: $color-grey-light;
+        min-height: 15rem;
+
+        .place {
+            font-size: 1.6rem !important;
+        }
+    }
+
+    &-cap {
+        position: relative;
+        z-index: 3;
+        color: $color-white;
+
+        h3.caption {
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+    }
+
+    &-date {
+        position: relative;
+        text-align: right;
+        z-index: 3;
+        font-size: 1.6rem !important;
+        color: $color-white;
+
+        span {
+            &:first-child {
+                font-weight: $semi-bold;
+            }
+
+            &:last-child {
+                display: block;
+                font-size: 1.2rem !important;
+            }
+        }
+    }
+
+    &-picture {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 100%;
+        }
+    }
+
+    @media (min-width: $min-small) {
+        &-item {
+            width: 50%;
+
+            a {
+                &:hover {
+                    .event-cap,
+                    .event-date {
+                        color: $color-white;
+                    }
+
+                    .bg-black,
+                    .event-picture {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        &-date,
+        &-cap {
+            color: $color-black;
+        }
+
+        &-picture, &-content .bg-black {
+            display: none;
+        }
+    }
+}

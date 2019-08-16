@@ -1,0 +1,113 @@
+*,
+*:after,
+*:before {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5% !important;
+
+    @media (max-width: $medium) {
+        font-size: 56.25% !important;
+    }
+
+    @media (max-width: small) {
+        font-size: 50% !important;
+    }
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+	padding: 0;
+	margin: 0;
+}
+textarea {
+	resize: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+fieldset,
+img {
+	border: 0;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+	font-weight: normal;
+	font-style: normal;
+}
+ol,
+ul {
+	list-style: none;
+}
+caption,
+th {
+	text-align: left;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: normal;
+}
+
+abbr,
+acronym {
+	border: 0;
+}
+
+body {
+    font-family: $typo-1;
+    line-height: 1.5 !important;
+    font-size: inherit !important;
+    box-sizing: border-box;
+    min-width: 32rem;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+button {
+	cursor: pointer;
+    outline: none;
+    box-shadow: none;
+}
+
+.stop-scroling {
+    overflow: hidden;
+}

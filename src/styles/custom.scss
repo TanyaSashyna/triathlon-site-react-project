@@ -1,0 +1,103 @@
+html, body, #root {
+    height: 100%;
+}
+
+.button-position-bottom {
+	max-width: 1000px;
+	position: fixed;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translate(0% -50%);
+	transform: translateX(-50%);
+	z-index: 1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+
+    &-wrap {
+        flex-grow: 1;
+        width: 100%;
+        padding-right: 2rem;
+        padding-left: 2rem;
+
+        @media (min-width: $min-medium) {
+            padding-right: 5rem;
+        padding-left: 32rem;
+        }
+    }
+}
+
+.caption-page {
+    padding: 10rem 0;
+
+    h2 {
+        color: $color-white;
+        font-size: 5rem;
+    }
+
+    @media (max-width: $medium) {
+        h2 {
+            text-align: center;
+        }
+    }
+}
+
+i {
+	font-family: 'FontAwesome';
+}
+
+.bg-black {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: $color-black;
+    opacity: 0.6;
+    z-index: 2;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+
+.btn-group {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.btn {
+    min-width: 12rem;
+    background-color: $color-mint;
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 3px;
+    color: $color-white;
+    font-weight: $semi-bold;
+    font-size: 1.5rem;
+    transition: 0.5s;
+
+    &:hover {
+        background-color: $color-blue;
+    }
+}
+
+.not-found {
+    font-size: 2.1rem;
+    margin-top: 2rem;
+    text-align: center;
+    width: 100%;
+    color: $color-blue;
+}

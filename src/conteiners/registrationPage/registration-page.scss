@@ -1,0 +1,92 @@
+@import "../../styles/variables";
+
+.reg-page {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 1.5rem;
+    background: $color-grey-3;
+
+    .form-reg {
+        max-width: 50rem;
+        width: 100%;
+        padding: 1.5rem;
+        background: $color-white;
+        border-radius: 4px;
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+
+        .logo {
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 2rem;
+            color: $color-error;
+            text-align: center;
+            font-weight: $bold;
+            margin-bottom: 2rem;
+        }
+
+        .form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            label {
+                display: block;
+                width: 100%;
+                margin-bottom: 2rem;
+
+                span {
+                    font-size: 1.4rem;
+                }
+
+                input {
+                    width: 100%;
+                }
+            }
+
+            &-item {
+                width: 100%;
+
+                &.password {
+                    width: 48%;
+                }
+            }
+
+            .btn-group {
+                width: 100%;
+                padding: 0;
+            }
+        }
+
+        .reg-radio {
+            margin-bottom: 2rem;
+
+            label {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    @media (max-width: $small) {
+        .form-reg {
+            .form {
+                &-item {
+                    &.password {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-height: $height-630) {
+        height: auto;
+    }
+}

@@ -1,0 +1,58 @@
+//radio button
+.reg-radio {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid $color-grey-light;
+    border-bottom: 1px solid $color-grey-light;
+    padding: 1rem 0.2rem 0.5rem;
+
+    .radio-label {
+        width: 50%;
+
+        label {
+            display: block;
+            padding: 0 1rem 0 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            position: relative;
+
+            &:before {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                width: 1.7rem;
+                height: 1.7rem;
+                border-radius: 50%;
+                border: 1px solid $color-mint;
+                background: $color-white;
+            }
+        }
+
+        input {
+            &:checked + label {
+                &:after {
+                    content: '';
+                    display: inline-block;
+                    position: absolute;
+                    top: 50%;
+                    left: 0.5rem;
+                    transform: translateY(-50%);
+                    width: 0.7rem;
+                    height: 0.7rem;
+                    border-radius: 50%;
+                    background: $color-blue;
+                }
+            }
+        }
+    }
+
+    .required-field {
+        width: 100%;
+        color: $color-blue;
+        font-size: 1.3rem;
+        font-weight: $semi-bold;
+    }
+}

@@ -1,0 +1,14 @@
+//for the login and registration pages
+.form-quest {
+    font-size: 1.4rem;
+    margin-top:2rem;
+
+    a {
+        color: $color-mint;
+        transition: 0.5s;
+
+        &:hover {
+            color: $color-blue;
+        }
+    }
+}
