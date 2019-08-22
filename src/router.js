@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
-import { Switch, withRouter } from "react-router-dom";
-import { connect } from "react-redux";
-import { PrivateRoute } from "./private-router";
+import React, { useEffect } from 'react';
+import { Switch, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { PrivateRoute } from './private-router';
 
 import AdminMainPage from './conteiners/adminMainPage/adminMainPage';
 import AdminAddEventPage from './conteiners/adminAddEventPage/adminAddEventPage';
 import AdminMyEventsPage from './conteiners/adminMyEventsPage/adminMyEventsPage';
-import AdminAddPhotogalarytPage from "./conteiners/adminPhotogalaryPage/adminPhotogalaryPage"
-import AdminResultsPage from "./conteiners/adminResultsPage/adminResultsPage"
+import AdminAddPhotogalarytPage from './conteiners/adminPhotogalaryPage/adminPhotogalaryPage';
+import AdminResultsPage from './conteiners/adminResultsPage/adminResultsPage';
 
 import Home from './conteiners/home/Home';
 import Result from './conteiners/result/Result';
@@ -25,63 +25,63 @@ const route = [
 	{
 		id: 1,
 		exact: true,
-		path: "/",
+		path: '/',
 		protected: false,
 		component: Home
 	},
 	{
 		id: 2,
 		exact: true,
-		path: "/events",
+		path: '/events',
 		protected: false,
 		component: Events
 	},
 	{
 		id: 3,
 		exact: true,
-		path: "/events/:id",
+		path: '/events/:id',
 		protected: false,
 		component: EventCard
 	},
 	{
 		id: 4,
 		exact: true,
-		path: "/results",
+		path: '/results',
 		protected: false,
 		component: Result
 	},
 	{
 		id: 5,
 		exact: true,
-		path: "/gallery",
+		path: '/gallery',
 		protected: false,
 		component: Gallery
 	},
 	{
 		id: 6,
 		exact: true,
-		path: "/reviews",
+		path: '/reviews',
 		protected: false,
 		component: Reviews
 	},
 	{
 		id: 7,
 		exact: true,
-		path: "/login",
+		path: '/login',
 		protected: false,
 		component: Login
 	},
 	{
 		id: 8,
 		exact: true,
-		path: "/registration",
+		path: '/registration',
 		protected: false,
 		component: RegistrationPage
 	},
 	{
 		id: 9,
 		exact: true,
-		path: "/profile",
+		path: '/profile',
 		protected: true,
 		hasAccess: 'user',
 		component: Profile
@@ -89,7 +89,7 @@ const route = [
 	{
 		id: 10,
 		exact: true,
-		path: "/admin",
+		path: '/admin',
 		protected: true,
 		hasAccess: 'admin',
 		component: AdminMainPage
@@ -97,7 +97,7 @@ const route = [
 	{
 		id: 11,
 		exact: true,
-		path: "/admin/add_new_event",
+		path: '/admin/event',
 		protected: true,
 		hasAccess: 'admin',
 		component: AdminAddEventPage
@@ -105,7 +105,7 @@ const route = [
 	{
 		id: 12,
 		exact: true,
-		path: "/admin/photogalary",
+		path: '/admin/photogalary',
 		protected: true,
 		hasAccess: 'admin',
 		component: AdminAddPhotogalarytPage
@@ -113,7 +113,7 @@ const route = [
 	{
 		id: 13,
 		exact: true,
-		path: "/admin/results",
+		path: '/admin/results',
 		protected: true,
 		hasAccess: 'admin',
 		component: AdminResultsPage
@@ -121,7 +121,7 @@ const route = [
 	{
 		id: 14,
 		exact: true,
-		path: "/admin/my_events",
+		path: '/admin/my_events',
 		protected: true,
 		hasAccess: 'admin',
 		component: AdminMyEventsPage
@@ -133,26 +133,29 @@ const route = [
 ];
 
 const Router = withRouter(({ history, user }) => {
-	useEffect(() => {
-		const userl = localStorage.user ? JSON.parse(localStorage.user).user : null;
+	useEffect(
+		() => {
+			const userl = localStorage.user ? JSON.parse(localStorage.user).user : null;
 
-		if (userl) {
-			const userRole = userl.role;
+			if (userl) {
+				const userRole = userl.role;
 
-			if (userRole === 'admin') {
-				history.push("/admin");
+				if (userRole === 'admin') {
+					history.push('/admin');
+				}
+
+				if (userRole === 'user') {
+					history.push('/profile');
+				}
 			}
-
-			if (userRole === 'user') {
-				history.push("/profile");
-			}
-		}
-	}, [history, user]);
+		},
+		[ history, user ]
+	);
 
 	return (
 		<div className="container">
 			<Switch>
-				{route.map(el => (
+				{route.map((el) => (
 					<PrivateRoute
 						protectedRoute={el.protected}
 						key={el.id}
@@ -166,12 +169,10 @@ const Router = withRouter(({ history, user }) => {
 	);
 });
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
 	return {
 		user: state.login.user
 	};
 };
 
-export default connect(
-	mapStateToProps
-)(Router);
+export default connect(mapStateToProps)(Router);

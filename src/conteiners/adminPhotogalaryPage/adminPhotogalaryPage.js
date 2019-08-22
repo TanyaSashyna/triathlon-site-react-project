@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import * as actions from "../../actions/photogalaryActions";
+import { changeEditFlag } from "../../actions/adminMainPageActions";
+import {getEvents, getPhotogalary, postPhotogalary} from "../../actions/photogalaryActions";
 import AdminHeader from "../../components/adminHeader/adminHeader";
 import PhotogalaryForm from "../../components/adminPhotogalary/adminPhotogalaryReduxForm";
 import ConfirmationMessage from "../../components/confirmationMessage/confirmationMessage";
@@ -32,7 +33,7 @@ class AdminAddPhotogalarytPage extends Component {
 
         return (
             <>
-                <AdminHeader />
+                <AdminHeader changeEditFlag={this.props.changeEditFlag}/>
                 <div className="photogalary-form">
                     <div className="photogalary-form__content">
                         <h2 className="photogalary-form__form-title">ADD PHOTOGALARY</h2>
@@ -61,5 +62,5 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    actions
+    {changeEditFlag, getEvents, getPhotogalary, postPhotogalary}
 )(AdminAddPhotogalarytPage);

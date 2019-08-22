@@ -33,7 +33,7 @@ class AdminAddEventPage extends Component {
 
         return (
             <>
-                <AdminHeader />
+                <AdminHeader changeEditFlag={this.props.changeEditFlag}/>
                 <div className="event-page">
                     <div className="event-page__content">
                         <h2 className="event-page__title">MY EVENTS</h2>
@@ -65,7 +65,7 @@ class AdminAddEventPage extends Component {
                             )}
                         </div>
 
-                        {editFormFlag && <Redirect to='/admin/add_new_event' />}
+                        {editFormFlag && <Redirect to='/admin/event' />}
                     </div>
                 </div>
             </>

@@ -33,7 +33,7 @@ class AdminAddEventPage extends Component {
 
         return (
             <>
-                <AdminHeader />
+                <AdminHeader changeEditFlag={this.props.changeEditFlag}/>
                 <div className="event-form">
                     <div className="event-form__content">
                         <h2 className="event-form__form-title">{editFormFlag ? 'CHANGE EVENT' : 'ADD NEW EVENT'}</h2>
@@ -51,7 +51,7 @@ class AdminAddEventPage extends Component {
 
                 {this.state.confirmationMessageFlag &&
                     <ConfirmationMessage closeMessage={this.closeConfirmationMessage}>
-                        <div className="text">{editFormFlag ? `Event has been changed.` : `New event has beed added.`}</div>
+                        <div className="text">Event has been saved</div>
                     </ConfirmationMessage >}
             </>
         );

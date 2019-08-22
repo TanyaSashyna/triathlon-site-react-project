@@ -57,7 +57,7 @@ export class Sidebar extends React.Component {
                     </div>
                     <ul>
 						{
-                            role && <li><Link to="/profile">Profile</Link></li>
+                            role === 'user' && <li><Link to="/profile">Profile</Link></li>
 						}
 						
                         {
@@ -71,13 +71,15 @@ export class Sidebar extends React.Component {
                             !role && <li><Link to="/login">Login</Link></li>
 						}
                         {
-                            role && <li>
+                            role === 'user' && <li>
                                 <button className="logout" onClick={this.logoutHandler}>
                                     <i className="fa fa-sign-out"></i>
                                 </button>
                             </li>
 						}
-						
+                        {
+                            role === 'admin' && <li><Link to="/admin">Admin panel</Link></li>
+                        }
                     </ul>
                 </nav>
                 <div className="menu-skew">

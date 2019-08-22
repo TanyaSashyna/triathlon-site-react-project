@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getEvents, getEventByTitle } from "../../actions/adminMainPageActions";
+import { getEvents, getEventByTitle, changeEditFlag } from "../../actions/adminMainPageActions";
 import { getRegistredUsers, resultsPromiseAll } from "../../actions/adminResultsActions";
 import AdminHeader from "../../components/adminHeader/adminHeader";
 import ResultsForm from "../../components/adminResults/adminResultsForm";
@@ -55,7 +55,7 @@ class AdminResultstPage extends Component {
 
         return (
             <>
-                <AdminHeader />
+                <AdminHeader changeEditFlag={this.props.changeEditFlag}/>
                 <div className="results-form">
                     <div className="results-form__content">
                         <h2 className="results-form__form-title">RESULTS</h2>
@@ -90,5 +90,5 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    { getEvents, getEventByTitle, getRegistredUsers, resultsPromiseAll }
+    { getEvents, getEventByTitle, getRegistredUsers, resultsPromiseAll, changeEditFlag }
 )(AdminResultstPage);
